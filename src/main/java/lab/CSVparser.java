@@ -56,14 +56,40 @@ public class CSVparser {
         }
 
         FileReader file = new FileReader(filePath);
-        CSVReader reader = new CSVReader(file, ';');
-        String[] nextStr;
+        Reader rdr = new Reader(file) {
+            @Override
+            public int read(char[] cbuf, int off, int len) throws IOException {
+                return 0;
+            }
 
-        while ((nextStr = reader.readNext()) != null) {
+            @Override
+            public void close() throws IOException {
+
+            }
+        };
+
+        CSVParser parser = new CSVParserBuilder()
+                .withSeparator(';')
+                .withIgnoreQuotations(true)
+                .build();
+
+        CSVReader reader = new CSVReaderBuilder(rdr)
+                .withSkipLines(0)
+                .withCSVParser(parser)
+                .build();
+        String[] nextStr = {""};
+
+        do {
+            try{
+                nextStr = reader.readNext();
+            }
+            catch (CsvValidationException e){
+                System.out.println(e.getMessage());
+            }
             Random random = new Random();
             id = random.nextInt(25000);
             persons.add(new Person(nextStr[0], nextStr[1], nextStr[2], nextStr[5], nextStr[3], nextStr[4], id));
-        }
+        } while (nextStr != null);
         return persons;
     }
 }

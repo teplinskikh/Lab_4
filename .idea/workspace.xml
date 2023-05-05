@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c11862c1-3fa8-40e4-8138-f488c61fcb3e" name="Changes" comment="Fixed fileRead method">
+    <list default="true" id="c11862c1-3fa8-40e4-8138-f488c61fcb3e" name="Changes" comment="Added main">
+      <change afterPath="$PROJECT_DIR$/src/main/java/lab/Testing.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lab/CSVparser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab/CSVparser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lab/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +83,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683296545653</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added main">
+      <created>1683298420245</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1683298420245</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -91,6 +98,7 @@
     <MESSAGE value="Added class Department and class Person" />
     <MESSAGE value="Added isCorrectFilePath method and fileRead method" />
     <MESSAGE value="Fixed fileRead method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed fileRead method" />
+    <MESSAGE value="Added main" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added main" />
   </component>
 </project>

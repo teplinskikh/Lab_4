@@ -42,7 +42,6 @@ public class CSVparser {
      * @return the list of persons (employees)
      **/
     public List<Person> fileRead() throws IOException {
-        int id;
         List<Person> persons = new ArrayList();
 
         Scanner input = new Scanner(System.in);
@@ -55,7 +54,18 @@ public class CSVparser {
             if (input.hasNextLine())
                 path = input.nextLine();
         }
+        return persons = parse(filePath);
+    }
 
+    /**
+     * Method for parsing into list
+     * @param filePath path to file
+     * @throws IOException An exception that is thrown when an I/O error occurs
+     * @return the list of persons (employees)
+     **/
+    public List<Person> parse(String filePath) throws IOException {
+        List<Person> personsResult = new ArrayList();
+        int id;
         FileReader file = new FileReader(filePath);
         Reader rdr = new Reader(file) {
             @Override
@@ -89,9 +99,9 @@ public class CSVparser {
             }
             Random random = new Random();
             id = random.nextInt(25000);
-            persons.add(new Person(nextStr[0], nextStr[1], nextStr[2], nextStr[5], nextStr[3], nextStr[4], id));
+            personsResult.add(new Person(nextStr[0], nextStr[1], nextStr[2], nextStr[5], nextStr[3], nextStr[4], id));
         } while (nextStr != null);
-        return persons;
+        return personsResult;
     }
 }
 

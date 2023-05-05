@@ -38,6 +38,7 @@ public class CSVparser {
 
     /**
      * Method that takes a file as input, reads and processes it
+     * @throws IOException An exception that is thrown when an I/O error occurs
      * @return the list of persons (employees)
      **/
     public List<Person> fileRead() throws IOException {

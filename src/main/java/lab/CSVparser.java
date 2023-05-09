@@ -20,19 +20,21 @@ import java.io.IOException;
  * Class for reading information from csv file and returning a list of employees generated from a file
  **/
 public class CSVparser {
-    private String filePath;
+    private static String filePath;
 
     /**
      * Method that checks correctness of file path
      * @param path path to file
      * @return true if it's correct, false if not
      **/
-    private boolean isCorrectFilePath(String path) {
+    public static boolean isCorrectFilePath(String path) {
         File file = new File(path);
         if (file.exists() && path.split("\\.", 2)[1].equals("csv")) {
             filePath = path;
+            System.out.println(true);
             return true;
         }
+        System.out.println(false);
         return false;
     }
 
@@ -41,7 +43,7 @@ public class CSVparser {
      * @throws IOException An exception that is thrown when an I/O error occurs
      * @return the list of persons (employees)
      **/
-    public List<Person> fileRead() throws IOException {
+    public static List<Person> fileRead() throws IOException {
         List<Person> persons = new ArrayList();
 
         Scanner input = new Scanner(System.in);
@@ -54,7 +56,7 @@ public class CSVparser {
             if (input.hasNextLine())
                 path = input.nextLine();
         }
-        return persons = parse(filePath);
+        return persons = parseCSV(filePath);
     }
 
     /**
@@ -63,7 +65,7 @@ public class CSVparser {
      * @throws IOException An exception that is thrown when an I/O error occurs
      * @return the list of persons (employees)
      **/
-    public List<Person> parse(String filePath) throws IOException {
+    public static List<Person> parseCSV(String filePath) throws IOException {
         List<Person> personsResult = new ArrayList();
         int id;
         FileReader file = new FileReader(filePath);
@@ -88,11 +90,16 @@ public class CSVparser {
                 .withSkipLines(0)
                 .withCSVParser(parser)
                 .build();
+
         String[] nextStr = {""};
+        String[] nullStr = {""};
+
+        System.out.println(reader.peek());
 
         do {
             try{
                 nextStr = reader.readNext();
+                System.out.println(nextStr);
             }
             catch (CsvValidationException e){
                 System.out.println(e.getMessage());
@@ -100,7 +107,8 @@ public class CSVparser {
             Random random = new Random();
             id = random.nextInt(25000);
             personsResult.add(new Person(nextStr[0], nextStr[1], nextStr[2], nextStr[5], nextStr[3], nextStr[4], id));
-        } while (nextStr != null);
+            System.out.println(personsResult.size());
+        } while (!nextStr.equals(nullStr));
         return personsResult;
     }
 }

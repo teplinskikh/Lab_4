@@ -105,4 +105,8 @@ public class Person {
         this.birthDate = birthDate;
         dep = new Department(title_dep, id_dep);
     }
+
+    public String getName(){
+        return name;
+    }
 }

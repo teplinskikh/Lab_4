@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c11862c1-3fa8-40e4-8138-f488c61fcb3e" name="Changes" comment="Added main">
-      <change afterPath="$PROJECT_DIR$/src/main/java/lab/Testing.java" afterDir="false" />
+    <list default="true" id="c11862c1-3fa8-40e4-8138-f488c61fcb3e" name="Changes" comment="Reworked fileRead method and added parse method">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lab/CSVparser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab/CSVparser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lab/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lab/Testing.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +23,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -50,9 +53,20 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true"
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
+    "last_opened_file_path": "C:/Users/Sofi/IdeaProjects/Lab_1"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="lab" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -90,7 +104,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683298420245</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Reworked fileRead method and added parse method">
+      <created>1683315026635</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1683315026635</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -99,6 +120,7 @@
     <MESSAGE value="Added isCorrectFilePath method and fileRead method" />
     <MESSAGE value="Fixed fileRead method" />
     <MESSAGE value="Added main" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added main" />
+    <MESSAGE value="Reworked fileRead method and added parse method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reworked fileRead method and added parse method" />
   </component>
 </project>

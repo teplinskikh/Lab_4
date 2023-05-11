@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c11862c1-3fa8-40e4-8138-f488c61fcb3e" name="Changes" comment="Reworked fileRead method and added parse method">
+    <list default="true" id="c11862c1-3fa8-40e4-8138-f488c61fcb3e" name="Changes" comment="Renamed method parse to parseCSV and edited it, added getName method, added libs for tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lab/CSVparser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab/CSVparser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lab/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lab/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab/Person.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lab/Testing.java" beforeDir="false" />
     </list>
@@ -49,16 +49,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
-    "last_opened_file_path": "C:/Users/Sofi/IdeaProjects/Lab_1"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit4&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4&quot;: &quot;&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Sofi/IdeaProjects/Lab_1&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -111,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683315026635</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Renamed method parse to parseCSV and edited it, added getName method, added libs for tests">
+      <created>1683659270777</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1683659270777</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -121,6 +128,7 @@
     <MESSAGE value="Fixed fileRead method" />
     <MESSAGE value="Added main" />
     <MESSAGE value="Reworked fileRead method and added parse method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reworked fileRead method and added parse method" />
+    <MESSAGE value="Renamed method parse to parseCSV and edited it, added getName method, added libs for tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Renamed method parse to parseCSV and edited it, added getName method, added libs for tests" />
   </component>
 </project>

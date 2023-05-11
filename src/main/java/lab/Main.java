@@ -23,7 +23,7 @@ public class Main {
             persons = reader.fileRead();
 
             for (int i = 1; i < persons.size(); i++)
-                System.out.println(persons.get(i));
+                System.out.println(persons.get(i).getPerson());
             System.out.println("Enter 'exit' to exit.");
             exit_code = input.nextLine();
         }

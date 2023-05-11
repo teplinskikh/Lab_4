@@ -1,6 +1,7 @@
 package lab;
 
 import java.io.Reader;
+import java.nio.file.Files;
 import java.util.*;
 import java.io.FileReader;
 import java.util.ArrayList;
@@ -20,21 +21,19 @@ import java.io.IOException;
  * Class for reading information from csv file and returning a list of employees generated from a file
  **/
 public class CSVparser {
-    private static String filePath;
+    private String filePath;
 
     /**
      * Method that checks correctness of file path
      * @param path path to file
      * @return true if it's correct, false if not
      **/
-    public static boolean isCorrectFilePath(String path) {
+    public boolean isCorrectFilePath(String path) {
         File file = new File(path);
         if (file.exists() && path.split("\\.", 2)[1].equals("csv")) {
             filePath = path;
-            System.out.println(true);
             return true;
         }
-        System.out.println(false);
         return false;
     }
 
@@ -43,7 +42,7 @@ public class CSVparser {
      * @throws IOException An exception that is thrown when an I/O error occurs
      * @return the list of persons (employees)
      **/
-    public static List<Person> fileRead() throws IOException {
+    public List<Person> fileRead() throws IOException {
         List<Person> persons = new ArrayList();
 
         Scanner input = new Scanner(System.in);
@@ -65,21 +64,12 @@ public class CSVparser {
      * @throws IOException An exception that is thrown when an I/O error occurs
      * @return the list of persons (employees)
      **/
-    public static List<Person> parseCSV(String filePath) throws IOException {
+    public List<Person> parseCSV(String filePath) throws IOException {
         List<Person> personsResult = new ArrayList();
-        int id;
-        FileReader file = new FileReader(filePath);
-        Reader rdr = new Reader(file) {
-            @Override
-            public int read(char[] cbuf, int off, int len) throws IOException {
-                return 0;
-            }
-
-            @Override
-            public void close() throws IOException {
-
-            }
-        };
+        List<Department> departments = new ArrayList();
+        departments.add(new Department("null", 0));
+        File file = new File(filePath);
+        Reader rdr = Files.newBufferedReader(file.toPath());
 
         CSVParser parser = new CSVParserBuilder()
                 .withSeparator(';')
@@ -91,25 +81,40 @@ public class CSVparser {
                 .withCSVParser(parser)
                 .build();
 
-        String[] nextStr = {""};
-        String[] nullStr = {""};
+        String[] nextStr = {"hi"};
 
-        System.out.println(reader.peek());
-
-        do {
+        while (nextStr != null){
             try{
                 nextStr = reader.readNext();
-                System.out.println(nextStr);
             }
             catch (CsvValidationException e){
                 System.out.println(e.getMessage());
             }
-            Random random = new Random();
-            id = random.nextInt(25000);
-            personsResult.add(new Person(nextStr[0], nextStr[1], nextStr[2], nextStr[5], nextStr[3], nextStr[4], id));
-            System.out.println(personsResult.size());
-        } while (!nextStr.equals(nullStr));
+            if (nextStr != null) {
+                personsResult.add(new Person(nextStr[0], nextStr[1], nextStr[2], nextStr[5], nextStr[3], nextStr[4], setDepartmentID(nextStr[4], departments)));
+            }
+        }
         return personsResult;
+    }
+
+    /**
+     * Method for setting id for departments
+     * @param dep_title name of department
+     * @param deps list of departments
+     * @return id of departments
+     **/
+    public int setDepartmentID(String dep_title, List<Department> deps) {
+        int id = 0;
+        for (int i = 0; i < deps.size(); i++) {
+            if (Objects.equals(deps.get(i).getTitle(), dep_title)){
+                return deps.get(i).getId();
+            }
+        }
+        Random rndm = new Random();
+        id = rndm.nextInt(25000);
+        Department tmp = new Department(dep_title, id);
+        deps.add(tmp);
+        return id;
     }
 }
 

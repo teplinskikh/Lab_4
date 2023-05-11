@@ -109,4 +109,13 @@ public class Person {
     public String getName(){
         return name;
     }
+
+    public String getSex(){
+        return sex;
+    }
+
+    public String getPerson() {
+        String person = "";
+        return person = person + id + " " + name + " " + sex + " " + salary + " " + birthDate + " " + dep.getTitle() + " " + String.valueOf(dep.getId());
+    }
 }
